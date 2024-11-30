@@ -1,124 +1,539 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Martens Remodeling</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'rustic-orange': '#D68B4A',
-            'golden-yellow': '#F2C94C',
-            'warm-beige': '#F5E9DA',
-            'charcoal-gray': '#4A4A4A',
-            'forest-green': '#6A9A8A',
-          },
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Madtown Property Services</title>
+    <link rel="icon" href="assets/images/madtown-logo.png" type="image/png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap");
+
+      /* Base Styles */
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: #ffffff; /* Clean white background */
+        color: #4a4a4a; /* Neutral text color */
+        line-height: 1.6;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Poppins", sans-serif;
+      }
+      a {
+        text-decoration: none;
+        color: #d68b4a; /* Rustic orange for links */
+        font-weight: 500;
+      }
+      a:hover {
+        color: #6a9a8a; /* Forest green hover */
+      }
+
+      /* Header */
+      .header {
+        background-color: #ffffff; /* Minimal header */
+        border-bottom: 1px solid #e5e5e5;
+        padding: 1rem 0;
+      }
+      .header h1 {
+        font-size: 1.75rem;
+        color: #d68b4a;
+      }
+
+      /* Hero Section */
+      .hero .cta-button {
+        background-color: #d68b4a;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+      }
+      .hero .cta-button:hover {
+        background-color: #6a9a8a;
+      }
+
+      /* Services Section */
+      .services {
+        background-color: #f5e9da; /* Light beige for contrast */
+        padding: 2rem 1rem;
+      }
+      .services h2 {
+        font-size: 1.75rem;
+        font-weight: 600;
+        color: #4a4a4a;
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+      .services .card {
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        padding: 1rem;
+      }
+
+      /* Portfolio Section */
+      .portfolio img {
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Footer */
+      .footer {
+        background-color: #f5e9da;
+        padding: 1rem 0;
+        text-align: center;
+      }
+
+      /* Ensure Swiper navigation stays inside the Portfolio Section */
+      #portfolio .swiper-container {
+        position: relative; /* Position relative to this container */
+      }
+
+      #portfolio .swiper-button-next,
+      #portfolio .swiper-button-prev,
+      #portfolio .swiper-pagination {
+        z-index: 10; /* Ensure these appear above content */
+        position: absolute; /* Constrain to the portfolio section */
+      }
+
+      #portfolio .swiper-button-next {
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      #portfolio .swiper-button-prev {
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      #portfolio .swiper-pagination {
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo and Company Name -->
+        <div class="flex items-center space-x-4">
+          <a href="#">
+            <img
+              src="assets/images/madtown-logo.png"
+              alt="Madtown Logo"
+              class="h-12 w-auto"
+            />
+          </a>
+          <h1 class="text-lg font-bold text-d68b4a">
+            Madtown Property Services
+          </h1>
+        </div>
+
+        <!-- Navigation and Contact Info -->
+        <div class="flex items-center space-x-8">
+          <!-- Contact Info -->
+          <div class="hidden md:flex flex-col text-right">
+            <a
+              href="tel:+16086227490"
+              class="text-gray-800 hover:underline text-sm"
+            >
+              (608) 622-7490
+            </a>
+            <a
+              href="mailto:DAVE.M@MadTownPs.com"
+              class="text-gray-800 hover:underline text-sm"
+            >
+              DAVE.M@MadTownPs.com
+            </a>
+          </div>
+
+          <!-- Navigation -->
+          <nav>
+            <ul class="flex space-x-4">
+              <li><a href="#home" class="hover:underline">Home</a></li>
+              <li><a href="#about" class="hover:underline">About</a></li>
+              <li><a href="#services" class="hover:underline">Services</a></li>
+              <li>
+                <a href="#portfolio" class="hover:underline">Portfolio</a>
+              </li>
+              <li><a href="#reviews" class="hover:underline">Reviews</a></li>
+              <li><a href="#contact" class="hover:underline">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      class="hero relative text-center text-white"
+      style="
+        background-image: url('assets/images/hero-background.jpg');
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+
+      <!-- Content -->
+      <div class="relative z-10 py-16 px-4">
+        <h2 class="text-4xl font-bold drop-shadow-md">
+          Madtown Property Services LLC
+        </h2>
+        <p class="text-lg mt-4 drop-shadow-md">
+          Handyman Specialist for Home & Commercial Properties
+        </p>
+        <a
+          href="#contact"
+          class="cta-button mt-6 inline-block bg-d68b4a text-white px-6 py-3 rounded hover:bg-6a9a8a"
+        >
+          Get a Quote
+        </a>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services py-16 bg-gray-50">
+      <div class="container mx-auto">
+        <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">
+          Our Services
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Electrical -->
+          <div class="card bg-white rounded-lg shadow-lg p-4 text-center">
+            <img
+              src="assets/images/electrical.jpg"
+              alt="Electrical"
+              class="w-full h-32 object-cover rounded-md mb-4"
+            />
+            <h3 class="text-lg font-bold text-d68b4a mb-2">Electrical</h3>
+            <ul class="text-sm text-gray-600">
+              <li>Light fixture installation</li>
+              <li>Ceiling fan installation</li>
+              <li>Switch or outlet repair/replacement</li>
+              <li>Minor electrical</li>
+              <li>Smoke detector installation</li>
+              <li>Garbage disposal installation</li>
+              <li>Hook up appliances</li>
+            </ul>
+          </div>
+          <!-- Plumbing -->
+          <div class="card bg-white rounded-lg shadow-lg p-4 text-center">
+            <img
+              src="assets/images/plumbing.jpg"
+              alt="Plumbing"
+              class="w-full h-32 object-cover rounded-md mb-4"
+            />
+            <h3 class="text-lg font-bold text-d68b4a mb-2">Plumbing</h3>
+            <ul class="text-sm text-gray-600">
+              <li>Faucet repair/installation</li>
+              <li>Toilet repair/installation</li>
+              <li>Vanity installation</li>
+              <li>Tile repair/installation</li>
+              <li>Towel rack/Towel Ring/</li>
+              <li>Toilet Paper Holder install/</li>
+              <li>repair</li>
+              <li>Handicap grab bar installation</li>
+              <li>Bathroom updating</li>
+              <li>Laundry room updating</li>
+            </ul>
+          </div>
+          <!-- Carpentry -->
+          <div class="card bg-white rounded-lg shadow-lg p-4 text-center">
+            <img
+              src="assets/images/carpentry.jpg"
+              alt="Carpentry"
+              class="w-full h-32 object-cover rounded-md mb-4"
+            />
+            <h3 class="text-lg font-bold text-d68b4a mb-2">Carpentry</h3>
+            <ul class="text-sm text-gray-600">
+              <li>Repair and replace wood</li>
+              <li>trim</li>
+              <li>Door/window trim/casing</li>
+              <li>Door repair</li>
+              <li>Bi-fold or sliding door</li>
+              <li>repair</li>
+              <li>Storm door repair/install</li>
+              <li>Cabinet installation</li>
+              <li>Deck & railing repair</li>
+              <li>Wainscoting</li>
+              <li>Shiplap</li>
+              <li>Pegboard</li>
+              <li>Shelving and organization</li>
+              <li>Furniture assembly</li>
+              <li>Fence/mailbox repair</li>
+              <li>Deck maintenance</li>
+            </ul>
+          </div>
+          <!-- General -->
+          <div class="card bg-white rounded-lg shadow-lg p-4 text-center">
+            <img
+              src="assets/images/general.jpg"
+              alt="General"
+              class="w-full h-32 object-cover rounded-md mb-4"
+            />
+            <h3 class="text-lg font-bold text-d68b4a mb-2">General</h3>
+            <ul class="text-sm text-gray-600">
+              <li>Ceramic/stone tile install/repair</li>
+              <li>Flooring laminate/tile/vinyl/</li>
+              <li>carpet tile</li>
+              <li>Drywall repair</li>
+              <li>TV wall mount installation</li>
+              <li>Blind/Curtain install</li>
+              <li>Vinyl siding repair</li>
+              <li>Caulking</li>
+              <li>Change light bulb/AC filter</li>
+              <li>Ceiling tile replacement</li>
+              <li>Wall Repair</li>
+              <li>Dock/pier wood replacement</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio py-16 bg-gray-50">
+      <div class="container mx-auto">
+        <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">
+          Our Work
+        </h2>
+        <div class="swiper-container">
+          <!-- Wrapper for Slides -->
+          <div class="swiper-wrapper">
+            <div class="swiper-slide flex justify-center">
+              <img
+                src="assets/images/portfolio/bathroom remodel.jpg"
+                alt="bathroom remodel"
+                class="h-192 w-auto object-cover rounded-md shadow-lg"
+              />
+            </div>
+            <div class="swiper-slide flex justify-center">
+              <img
+                src="assets/images/portfolio/before after door.jpg"
+                alt="sliding door repair"
+                class="h-192 w-auto object-cover rounded-md shadow-lg"
+              />
+            </div>
+            <div class="swiper-slide flex justify-center">
+              <img
+                src="assets/images/portfolio/custom bench-table 2-crop-u52503.jpg"
+                alt="custom bench-table"
+                class="h-192 w-auto object-cover rounded-md shadow-lg"
+              />
+            </div>
+            <div class="swiper-slide flex justify-center">
+              <img
+                src="assets/images/portfolio/custom bench-table1-crop-u52511.jpg"
+                alt="custom bench-table"
+                class="h-192 w-auto object-cover rounded-md shadow-lg"
+              />
+            </div>
+            <div class="swiper-slide flex justify-center">
+              <img
+                src="assets/images/portfolio/custom bench.jpg"
+                alt="custom bench"
+                class="h-192 w-auto object-cover rounded-md shadow-lg"
+              />
+            </div>
+            <div class="swiper-slide flex justify-center">
+              <img
+                src="assets/images/portfolio/custom table base and bench1028x578.jpg"
+                alt="custom bench-table"
+                class="h-192 w-auto object-cover rounded-md shadow-lg"
+              />
+            </div>
+            <div class="swiper-slide flex justify-center">
+              <img
+                src="assets/images/portfolio/custom table base and bench 2.jpg"
+                alt="custom bench-table"
+                class="h-192 w-auto object-cover rounded-md shadow-lg"
+              />
+            </div>
+            <div class="swiper-slide flex justify-center">
+              <img
+                src="assets/images/portfolio/custom table base 3.jpg"
+                alt="custom table base"
+                class="h-192 w-auto object-cover rounded-md shadow-lg"
+              />
+            </div>
+            <div class="swiper-slide flex justify-center">
+              <img
+                src="assets/images/portfolio/hidden tv art 1.jpg"
+                alt="hidden tv art"
+                class="h-192 w-auto object-cover rounded-md shadow-lg"
+              />
+            </div>
+            <div class="swiper-slide flex justify-center">
+              <img
+                src="assets/images/portfolio/hidden tv art 2.jpg"
+                alt="hidden tv art"
+                class="h-192 w-auto object-cover rounded-md shadow-lg"
+              />
+            </div>
+            <div class="swiper-slide flex justify-center">
+              <img
+                src="assets/images/portfolio/hidden tv art 3.jpg"
+                alt="hidden tv art"
+                class="h-192 w-auto object-cover rounded-md shadow-lg"
+              />
+            </div>
+            <div class="swiper-slide flex justify-center">
+              <img
+                src="assets/images/portfolio/hiddent tv art 4.jpg"
+                alt="hidden tv art"
+                class="h-192 w-auto object-cover rounded-md shadow-lg"
+              />
+            </div>
+            <div class="swiper-slide flex justify-center">
+              <img
+                src="assets/images/portfolio/lattice work1.jpg"
+                alt="lattice work"
+                class="h-192 w-auto object-cover rounded-md shadow-lg"
+              />
+            </div>
+            <div class="swiper-slide flex justify-center">
+              <img
+                src="assets/images/portfolio/lattice work2.jpg"
+                alt="lattice work"
+                class="h-192 w-auto object-cover rounded-md shadow-lg"
+              />
+            </div>
+            <div class="swiper-slide flex justify-center">
+              <img
+                src="assets/images/portfolio/lattice work3.jpg"
+                alt="lattice work"
+                class="h-192 w-auto object-cover rounded-md shadow-lg"
+              />
+            </div>
+            <div class="swiper-slide flex justify-center">
+              <img
+                src="assets/images/portfolio/ligth fixture replacement-crop-u53853.jpg"
+                alt="light fixture replacement"
+                class="h-192 w-auto object-cover rounded-md shadow-lg"
+              />
+            </div>
+            <div class="swiper-slide flex justify-center">
+              <img
+                src="assets/images/portfolio/tile replacement.jpg"
+                alt="tile replacement"
+                class="h-192 w-auto object-cover rounded-md shadow-lg"
+              />
+            </div>
+          </div>
+          <!-- Navigation Buttons -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <!-- Pagination Dots -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="py-16 bg-white">
+      <div class="container mx-auto max-w-lg text-center">
+        <h2 class="text-2xl font-bold text-gray-800">Contact Us</h2>
+        <p class="text-gray-600 mt-4">
+          Have a question or need a quote? Fill out the form below and we'll get
+          back to you soon.
+        </p>
+        <form class="mt-8 space-y-4">
+          <!-- Name -->
+          <div>
+            <label for="name" class="block text-left font-medium text-gray-700"
+              >Your Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="w-full border border-gray-300 rounded p-2"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+          <!-- Email -->
+          <div>
+            <label for="email" class="block text-left font-medium text-gray-700"
+              >Your Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="w-full border border-gray-300 rounded p-2"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <!-- Message -->
+          <div>
+            <label
+              for="message"
+              class="block text-left font-medium text-gray-700"
+              >Message</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              class="w-full border border-gray-300 rounded p-2"
+              placeholder="Enter your message"
+              required
+            ></textarea>
+          </div>
+          <!-- Submit Button -->
+          <div>
+            <button
+              type="submit"
+              class="w-full bg-d68b4a text-gray-700 py-2 px-4 rounded hover:bg-6a9a8a"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2024 Madtown Property Services. All rights reserved.</p>
+    </footer>
+
+    <!-- Swiper Script -->
+    <script>
+      const swiper = new Swiper(".swiper-container", {
+        // Swiper options
+        loop: true, // Infinite loop
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
         },
-      },
-    };
-  </script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap');
-    body {
-      font-family: 'Roboto', sans-serif;
-    }
-    h1, h2, h3 {
-      font-family: 'Poppins', sans-serif;
-    }
-  </style>
-</head>
-<body class="bg-warm-beige text-charcoal-gray scroll-smooth">
-
-  <!-- Header -->
-  <header class="bg-rustic-orange text-white py-6">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-3xl font-bold">Martens Remodeling</h1>
-      <nav>
-        <ul class="flex space-x-6">
-          <li><a href="#about" class="hover:underline">About</a></li>
-          <li><a href="#services" class="hover:underline">Services</a></li>
-          <li><a href="#portfolio" class="hover:underline">Portfolio</a></li>
-          <li><a href="#contact" class="hover:underline">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section id="hero" class="bg-warm-beige py-16">
-    <div class="container mx-auto text-center">
-      <h2 class="text-4xl font-semibold text-rustic-orange mb-4">Transforming Spaces, Building Dreams</h2>
-      <p class="text-lg mb-6">Friendly and professional remodeling services in Wisconsin.</p>
-      <a href="#contact" class="bg-forest-green text-white px-6 py-3 rounded hover:bg-rustic-orange">
-        Get a Quote
-      </a>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="py-16">
-    <div class="container mx-auto">
-      <h2 class="text-3xl font-semibold text-center text-rustic-orange mb-8">About Us</h2>
-      <p class="text-center max-w-3xl mx-auto">
-        At Martens Remodeling, we bring a personal touch to every project. Our team is dedicated to
-        creating inviting spaces that reflect your unique style and needs.
-      </p>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="bg-gray-100 py-16">
-    <div class="container mx-auto">
-      <h2 class="text-3xl font-semibold text-center text-rustic-orange mb-8">Our Services</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white shadow p-6">
-          <h3 class="text-xl font-semibold mb-2">Kitchen Remodeling</h3>
-          <p>Create the kitchen of your dreams with our expert design and craftsmanship.</p>
-        </div>
-        <div class="bg-white shadow p-6">
-          <h3 class="text-xl font-semibold mb-2">Bathroom Renovations</h3>
-          <p>Upgrade your bathroom with modern designs and high-quality finishes.</p>
-        </div>
-        <div class="bg-white shadow p-6">
-          <h3 class="text-xl font-semibold mb-2">Custom Projects</h3>
-          <p>Let us bring your unique ideas to life with custom remodeling solutions.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="py-16">
-    <div class="container mx-auto">
-      <h2 class="text-3xl font-semibold text-center text-rustic-orange mb-8">Our Work</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <img src="assets/images/project1.jpg" alt="Project 1" class="rounded shadow">
-        <img src="assets/images/project2.jpg" alt="Project 2" class="rounded shadow">
-        <img src="assets/images/project3.jpg" alt="Project 3" class="rounded shadow">
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="bg-gray-100 py-16">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-semibold text-rustic-orange mb-8">Contact Us</h2>
-      <p>Ready to transform your space? Reach out today!</p>
-      <p class="mt-4">
-        <strong>Phone:</strong> (555) 555-5555 <br>
-        <strong>Email:</strong> info@martensremodeling.com
-      </p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-charcoal-gray text-white py-6">
-    <div class="container mx-auto text-center">
-      <p>&copy; 2024 Martens Remodeling. All rights reserved.</p>
-    </div>
-  </footer>
-</body>
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+          delay: 3000, // Auto-slide every 3 seconds
+          disableOnInteraction: false,
+        },
+      });
+    </script>
+  </body>
 </html>
