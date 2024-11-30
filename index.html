@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Martens Remodeling</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'rustic-orange': '#D68B4A',
+            'golden-yellow': '#F2C94C',
+            'warm-beige': '#F5E9DA',
+            'charcoal-gray': '#4A4A4A',
+            'forest-green': '#6A9A8A',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap');
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    h1, h2, h3 {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-warm-beige text-charcoal-gray scroll-smooth">
+
+  <!-- Header -->
+  <header class="bg-rustic-orange text-white py-6">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-3xl font-bold">Martens Remodeling</h1>
+      <nav>
+        <ul class="flex space-x-6">
+          <li><a href="#about" class="hover:underline">About</a></li>
+          <li><a href="#services" class="hover:underline">Services</a></li>
+          <li><a href="#portfolio" class="hover:underline">Portfolio</a></li>
+          <li><a href="#contact" class="hover:underline">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="bg-warm-beige py-16">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-semibold text-rustic-orange mb-4">Transforming Spaces, Building Dreams</h2>
+      <p class="text-lg mb-6">Friendly and professional remodeling services in Wisconsin.</p>
+      <a href="#contact" class="bg-forest-green text-white px-6 py-3 rounded hover:bg-rustic-orange">
+        Get a Quote
+      </a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-semibold text-center text-rustic-orange mb-8">About Us</h2>
+      <p class="text-center max-w-3xl mx-auto">
+        At Martens Remodeling, we bring a personal touch to every project. Our team is dedicated to
+        creating inviting spaces that reflect your unique style and needs.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="bg-gray-100 py-16">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-semibold text-center text-rustic-orange mb-8">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white shadow p-6">
+          <h3 class="text-xl font-semibold mb-2">Kitchen Remodeling</h3>
+          <p>Create the kitchen of your dreams with our expert design and craftsmanship.</p>
+        </div>
+        <div class="bg-white shadow p-6">
+          <h3 class="text-xl font-semibold mb-2">Bathroom Renovations</h3>
+          <p>Upgrade your bathroom with modern designs and high-quality finishes.</p>
+        </div>
+        <div class="bg-white shadow p-6">
+          <h3 class="text-xl font-semibold mb-2">Custom Projects</h3>
+          <p>Let us bring your unique ideas to life with custom remodeling solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="py-16">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-semibold text-center text-rustic-orange mb-8">Our Work</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <img src="assets/images/project1.jpg" alt="Project 1" class="rounded shadow">
+        <img src="assets/images/project2.jpg" alt="Project 2" class="rounded shadow">
+        <img src="assets/images/project3.jpg" alt="Project 3" class="rounded shadow">
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-gray-100 py-16">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-semibold text-rustic-orange mb-8">Contact Us</h2>
+      <p>Ready to transform your space? Reach out today!</p>
+      <p class="mt-4">
+        <strong>Phone:</strong> (555) 555-5555 <br>
+        <strong>Email:</strong> info@martensremodeling.com
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-charcoal-gray text-white py-6">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 Martens Remodeling. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
