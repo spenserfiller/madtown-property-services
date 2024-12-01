@@ -18,253 +18,249 @@
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap");
 
       /* Base Styles */
-/* Global Styles */
-body {
-  font-family: "Roboto", sans-serif;
-  background-color: #ffffff;
-  color: #4a4a4a;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-h1,
-h2,
-h3 {
-  font-family: "Poppins", sans-serif;
-  color: #4a4a4a;
-}
-a {
-  text-decoration: none;
-  color: #d68b4a;
-  font-weight: 500;
-}
-a:hover {
-  color: #6a9a8a;
-}
+      /* Global Styles */
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: #ffffff;
+        color: #4a4a4a;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Poppins", sans-serif;
+        color: #4a4a4a;
+      }
+      a {
+        text-decoration: none;
+        color: #d68b4a;
+        font-weight: 500;
+      }
+      a:hover {
+        color: #6a9a8a;
+      }
 
-/* Section Spacing */
-section {
-  padding: 4rem 1rem; /* Consistent vertical spacing */
-}
+      /* Section Spacing */
+      section {
+        padding: 4rem 1rem; /* Consistent vertical spacing */
+      }
 
-/* Header */
-.header {
-  background-color: #ffffff;
-  border-bottom: 1px solid #e5e5e5;
-  padding: 1rem 0;
-}
+      /* Header */
+      .header {
+        background-color: #ffffff;
+        border-bottom: 1px solid #e5e5e5;
+        padding: 1rem 0;
+      }
 
-/* Hero Section */
-.hero {
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  color: white;
-}
-.hero .cta-button {
-  background-color: #d68b4a;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-  font-size: 1rem;
-  transition: background-color 0.3s;
-}
-.hero .cta-button:hover {
-  background-color: #6a9a8a;
-}
-.hero h2,
-.hero p {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Stronger shadow for better contrast */
-}
+      /* Hero Section */
+      .hero {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        color: white;
+      }
+      .hero .cta-button {
+        background-color: #d68b4a;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+      }
+      .hero .cta-button:hover {
+        background-color: #6a9a8a;
+      }
+      .hero h2,
+      .hero p {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Stronger shadow for better contrast */
+      }
 
+      /* Section Headings */
+      section h2 {
+        font-size: 2.25rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #4a4a4a;
+      }
 
-/* Section Headings */
-section h2 {
-  font-size: 2.25rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #4a4a4a;
-}
+      /* Cards */
+      .card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        text-align: center;
+      }
+      .card img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+      }
+      .card h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #d68b4a;
+      }
+      .card ul {
+        font-size: 0.875rem;
+        color: #4a4a4a;
+      }
 
-/* Cards */
-.card {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
-  text-align: center;
-}
-.card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-.card h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #d68b4a;
-}
-.card ul {
-  font-size: 0.875rem;
-  color: #4a4a4a;
-}
+      /* Portfolio */
+      /* Ensure Swiper Navigation Stays Inside the Portfolio Section */
+      #portfolio .swiper-container {
+        position: relative; /* Position relative to this container */
+        overflow: hidden; /* Hide overflow */
+      }
 
-/* Portfolio */
-/* Ensure Swiper Navigation Stays Inside the Portfolio Section */
-#portfolio .swiper-container {
-  position: relative; /* Position relative to this container */
-  overflow: hidden; /* Hide overflow */
-}
+      #portfolio .swiper-button-next,
+      #portfolio .swiper-button-prev {
+        z-index: 10; /* Ensure these appear above content */
+        position: absolute; /* Constrain to the portfolio section */
+        top: 50%; /* Vertically center */
+        transform: translateY(-50%);
+        color: #d68b4a; /* Match your theme */
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
 
-#portfolio .swiper-button-next,
-#portfolio .swiper-button-prev {
-  z-index: 10; /* Ensure these appear above content */
-  position: absolute; /* Constrain to the portfolio section */
-  top: 50%; /* Vertically center */
-  transform: translateY(-50%);
-  color: #d68b4a; /* Match your theme */
-  font-size: 1.5rem;
-  cursor: pointer;
-}
+      #portfolio .swiper-button-next {
+        right: 10px; /* Align to the right */
+      }
 
-#portfolio .swiper-button-next {
-  right: 10px; /* Align to the right */
-}
+      #portfolio .swiper-button-prev {
+        left: 10px; /* Align to the left */
+      }
 
-#portfolio .swiper-button-prev {
-  left: 10px; /* Align to the left */
-}
+      #portfolio .swiper-pagination {
+        position: absolute;
+        bottom: 10px; /* Align at the bottom of the swiper container */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        text-align: center;
+      }
 
-#portfolio .swiper-pagination {
-  position: absolute;
-  bottom: 10px; /* Align at the bottom of the swiper container */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  text-align: center;
-}
-
-
-/* Footer */
-.footer {
-  background-color: #f5e9da;
-  padding: 2rem 1rem;
-  text-align: center;
-  font-size: 0.875rem;
-  color: #4a4a4a;
-}
-
+      /* Footer */
+      .footer {
+        background-color: #f5e9da;
+        padding: 2rem 1rem;
+        text-align: center;
+        font-size: 0.875rem;
+        color: #4a4a4a;
+      }
     </style>
   </head>
   <body>
     <header class="header">
-        <div class="container mx-auto flex justify-between items-center px-4">
-          <!-- Logo and Company Name -->
-          <div class="flex items-center space-x-4">
-            <a href="#">
-              <img
-                src="assets/images/madtown-logo.png"
-                alt="Madtown Logo"
-                class="h-12 w-auto"
-              />
-            </a>
-            <h1 class="text-lg font-bold text-d68b4a">
-              Madtown Property Services
-            </h1>
-          </div>
-      
-          <!-- Mobile Toggle Button -->
-          <button
-            id="menu-toggle"
-            class="block md:hidden text-d68b4a focus:outline-none"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            </svg>
-          </button>
-      
-          <!-- Navigation and Contact Info -->
-          <div
-            id="menu"
-            class="hidden md:flex flex-col md:flex-row md:space-x-8 items-center w-full md:w-auto"
-          >
-            <!-- Contact Info -->
-            <div class="hidden md:flex flex-col text-right">
-              <a
-                href="tel:+16086227490"
-                class="text-gray-800 hover:underline text-sm"
-              >
-                (608) 622-7490
-              </a>
-              <a
-                href="mailto:DAVE.M@MadTownPs.com"
-                class="text-gray-800 hover:underline text-sm"
-              >
-                DAVE.M@MadTownPs.com
-              </a>
-            </div>
-      
-            <!-- Navigation Links -->
-            <nav>
-              <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-                <li><a href="#home" class="hover:underline">Home</a></li>
-                <li><a href="#about" class="hover:underline">About</a></li>
-                <li><a href="#services" class="hover:underline">Services</a></li>
-                <li>
-                  <a href="#portfolio" class="hover:underline">Portfolio</a>
-                </li>
-                <li><a href="#reviews" class="hover:underline">Reviews</a></li>
-                <li><a href="#contact" class="hover:underline">Contact</a></li>
-              </ul>
-            </nav>
-          </div>
+      <div class="container mx-auto flex justify-between items-center px-4">
+        <!-- Logo and Company Name -->
+        <div class="flex items-center space-x-4">
+          <a href="#">
+            <img
+              src="assets/images/madtown-logo.png"
+              alt="Madtown Logo"
+              class="h-12 w-auto"
+            />
+          </a>
+          <h1 class="text-lg font-bold text-d68b4a">
+            Madtown Property Services
+          </h1>
         </div>
-      </header>
-      
+
+        <!-- Mobile Toggle Button -->
+        <button
+          id="menu-toggle"
+          class="block md:hidden text-d68b4a focus:outline-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        </button>
+
+        <!-- Navigation and Contact Info -->
+        <div
+          id="menu"
+          class="hidden md:flex flex-col md:flex-row md:space-x-8 items-center w-full md:w-auto"
+        >
+          <!-- Contact Info -->
+          <div class="hidden md:flex flex-col text-right">
+            <a
+              href="tel:+16086227490"
+              class="text-gray-800 hover:underline text-sm"
+            >
+              (608) 622-7490
+            </a>
+            <a
+              href="mailto:DAVE.M@MadTownPs.com"
+              class="text-gray-800 hover:underline text-sm"
+            >
+              DAVE.M@MadTownPs.com
+            </a>
+          </div>
+
+          <!-- Navigation Links -->
+          <nav>
+            <ul
+              class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4"
+            >
+              <li><a href="#home" class="hover:underline">Home</a></li>
+              <li><a href="#about" class="hover:underline">About</a></li>
+              <li><a href="#services" class="hover:underline">Services</a></li>
+              <li>
+                <a href="#portfolio" class="hover:underline">Portfolio</a>
+              </li>
+              <li><a href="#reviews" class="hover:underline">Reviews</a></li>
+              <li><a href="#contact" class="hover:underline">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
 
     <!-- Hero Section -->
     <section
-    class="hero relative"
-    style="background-image: url('assets/images/hero-background.jpg');"
-  >
-    <div class="absolute inset-0 bg-black bg-opacity-70"></div>
-    <div class="relative z-10 container mx-auto text-center py-20 px-4">
-      <h2 class="text-4xl font-bold text-white mb-4 drop-shadow-lg">
-        Madtown Property Services LLC
-      </h2>
-      <p class="text-lg text-white mb-6 drop-shadow-md">
-        Handyman Specialist for Home & Commercial Properties
-      </p>
-      <a
-        href="#contact"
-        class="cta-button mt-6 inline-block bg-d68b4a text-white px-6 py-3 rounded hover:bg-6a9a8a"
-      >
-        Get a Quote
-      </a>
-    </div>
-  </section>
-  
-  
+      class="hero relative"
+      style="background-image: url('assets/images/hero-background.jpg')"
+    >
+      <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+      <div class="relative z-10 container mx-auto text-center py-20 px-4">
+        <h2 class="text-4xl font-bold text-white mb-4 drop-shadow-lg">
+          Madtown Property Services LLC
+        </h2>
+        <p class="text-lg text-white mb-6 drop-shadow-md">
+          Handyman Specialist for Home & Commercial Properties
+        </p>
+        <a
+          href="#contact"
+          class="cta-button mt-6 inline-block bg-d68b4a text-white px-6 py-3 rounded hover:bg-6a9a8a"
+        >
+          Get a Quote
+        </a>
+      </div>
+    </section>
 
     <!-- Services Section -->
-<section id="services" class="services">
-  <div class="container mx-auto max-w-screen-lg">
-    <h2>Our Services</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <section id="services" class="services">
+      <div class="container mx-auto max-w-screen-lg">
+        <h2>Our Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <!-- Electrical -->
           <div class="card">
             <img
@@ -358,14 +354,40 @@ section h2 {
       </div>
     </section>
 
+    <!-- About Me Section -->
+    <section id="about" class="py-16 bg-gray-50">
+      <div class="container mx-auto max-w-screen-md text-center">
+        <img
+          src="assets/images/head shot.jpg"
+          alt="Profile Picture"
+          class="w-32 h-32 mx-auto rounded-full shadow-lg mb-6"
+        />
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Dave Martens</h2>
+        <p class="text-gray-600 mb-4">
+          Let me take care of your "honey do list" that has been growing for
+          months or even years. I can change that light or plumbing fixture.
+          Repair that door that never closes right or rehang the towel bar that
+          broke off the wall. Check out my Services for a full list of
+          assistance. If you don't see what you are looking for on that page
+          don't hesitate to ask, I can likely do that too.
+        </p>
+        <p class="text-gray-600">
+          I have 30 years of experience in residential & commercial real estate.
+          From ownership to management and maintenance. After selling most of my
+          properties I decided the part of the business I like best was
+          maintenance. That led me to the handyman business. There is not much I
+          haven't worked on so let me help you.
+        </p>
+      </div>
+    </section>
+
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
-        <div class="container mx-auto max-w-screen-lg">
-          <h2>Our Work</h2>
-          <div class="swiper-container">
-            <div class="swiper-wrapper">
-
-          <!-- Wrapper for Slides -->
+      <div class="container mx-auto max-w-screen-lg">
+        <h2>Our Work</h2>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <!-- Wrapper for Slides -->
             <div class="swiper-slide">
               <img
                 src="assets/images/portfolio/bathroom remodel.jpg"
@@ -569,12 +591,12 @@ section h2 {
       });
     </script>
     <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const menu = document.getElementById('menu');
-      
-        menuToggle.addEventListener('click', () => {
-          menu.classList.toggle('hidden');
-        });
-      </script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+
+      menuToggle.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
   </body>
 </html>
